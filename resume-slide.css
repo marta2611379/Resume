@@ -1,0 +1,34 @@
+
+
+#own-photo{
+    height: 50vh;
+    margin: 10px ;
+}
+.contact-info{
+    height: 100%;
+    width: 90%;
+    padding: 20px 100px;
+    background-color: #b2d9eac7;
+}
+
+.resume{
+    height: 80%;width: 95%;
+    display: flex;
+}
+
+.icon{
+    width: 30px;
+    height: 30px;
+    margin: 5px;
+    background-color: #fff;
+    float: left;
+}
+
+
+.linkedin{background: url("img/css_sprites30px.png") -10px -10px;}
+
+.skype{background: url("img/css_sprites30px.png") -10px -60px;}
+
+ .email{ background: url("img/css_sprites30px.png") -60px -10px;}
+
+ .phone{ background: url("img/css_sprites30px.png") -60px -60px;}
