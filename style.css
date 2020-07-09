@@ -1,9 +1,9 @@
 @import url(reset.css);
-@import url(first-slide.css);
+@import url(resume-slide.css);
+
 body{
     font-family:'Merriweather', serif;
 }
-
 
 .one-page{
     height: 100vh;
@@ -24,12 +24,16 @@ body{
     flex-direction: column;
     justify-content: space-around;
 }
+.one-page:nth-child(3){
+    flex-direction: column;
+    justify-content: space-around;
+}
 
 .color1{background-color: #dfc7c1;}
 
 .color2{background-color: #e3ded8;}
 
-.color3{ background-color: #b2d9ea;
+.color3{ background-color: #b2d9eab9;
     /* background-color: #84b4c8; */}
 
 #circle-collection{
@@ -49,10 +53,6 @@ body{
 }
 
 .activePoint {background-color: #fff;}
-
-
-
-
 
 #info-about{
     height: 50%;
@@ -84,7 +84,7 @@ hr{
 .darkmilk{ color: #f5eacd;}
 .milk{ color: #fff9e9;}
 .light-pink{ color: #f8dfd6;}
-.main-tcolor{ color: #619196;}
+.main-tcolor{ color: #3c9da8;}
 
 #name{
     color: #f8c9b8;
@@ -109,3 +109,4 @@ hr{
     position: fixed;
     right: 0px;
 }
+
