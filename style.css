@@ -1,5 +1,7 @@
 @import url(reset.css);
-
+body{
+    font-family:'Merriweather', serif;
+}
 .one-page{
     height: 100vh;
     width: 100%;
@@ -8,15 +10,24 @@
     align-items: center;
 }
 
-.one-page{
-     background-image: url(img/slide1.png);
+.one-page:first-child{
+     background-image: url(img/working-place.jpg);
+     background-position: center;
+     background-size: 100% 100%;
+}
+
+.one-page:nth-child(2){
+    flex-direction: column;
 }
 
 .color1{background-color: #dfc7c1;}
 
-.color2{background-color: #f4dcd6;}
+.color2{background-color: #e3ded8;}
 
-.color3{background-color: #b2d9ea;}
+.color3{
+    /* background-color: #b2d9ea56; */
+    background-color: #84b4c8;
+}
 
 #circle-collection{
     width: 80px;
@@ -30,12 +41,11 @@
 .circle{
     width: 60px;
     height: 60px;
-    background-color: #84b4c8;;
+    background-color: #d8d8d2;
     border-radius: 50%;
 }
 
-.activePoint {background-color: #fff;
-}
+.activePoint {background-color: #fff;}
 
 #own-photo{
     height: 50vh;
@@ -43,9 +53,39 @@
 }
 
 #info-about{
-    height: 40%;
+    height: 50%;
     width: 70%;
-    background-color:#619196c9;
+    padding: 30px 10px;
+    background-color:#619196a9;
+    text-align: center;
+}
+.main-text-h{
+    padding-bottom: 50px;
+    font-size: 40px;
+    font-weight: bolder;
+}
+hr{
+    width: 80%;
+    height: 1px;
+    background-color: #fff9e9;;
+}
+
+.main-text{
+    padding-bottom: 35px;
+    font-size: 30px;
+}
+
+.f-end{
+    font-size: 45px;
+}
+
+.darkmilk{ color: #f5eacd;}
+.milk{ color: #fff9e9;}
+.light-pink{ color: #f8dfd6;}
+.main-tcolor{ color: #619196;}
+
+#name{
+    color: #f8c9b8;
 }
 
 #container{
