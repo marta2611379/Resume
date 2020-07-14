@@ -1,57 +1,99 @@
-
 $(document).ready(function () {
-    const windowWidth = $(window).innerWidth();
     const windowHeight = $(window).innerHeight();
-
     let top = $('.one-page').eq(0).offset().top;
-    console.log(top);
-    
-    $('html').animate({
-        scrollTop: top
-    }, 100)
+    let easing = ['easeInSine', 'easeOutSine', 'easeInOutSine', 'easeInQuad',
+        'easeOutQuad', 'easeInOutQuad', 'easeInCubic', 'easeOutCubic',
+        'easeInOutCubic', 'easeInQuart', 'easeOutQuart', 'easeInOutQuart',
+        'easeInQuint', 'easeOutQuint', 'easeInOutQuint', 'easeInExpo',
+        'easeOutExpo', 'easeInOutExpo', 'easeInCirc', 'easeOutCirc',
+        'easeInOutCirc', 'easeInBack', 'easeOutBack', 'easeInOutBack',
+        'easeInElastic', 'easeOutElastic', 'easeInOutElastic', 'easeInBounce',
+        'easeOutBounce', 'easeInOutBounce'];
+    let ballColors = ['#619196c4', '#619196;', '#619196a9', '#61919650', '#61919628']
 
-    $('html').animate({
-        scrollTop: 0
-    }, 0)
-
+    $('html').animate({ scrollTop: top }, 100)
+    $('html').animate({ scrollTop: 0 }, 0)
     $('.circle').eq(0).addClass('activePoint');
-  
 
     $('.circle').each(function (index, value) {
 
         $(value).mouseover(function () {
-            // let position = $(value).position();
-            // let top = position.top;
-            // let left = position.left;
-
-
-            // $('.name').css({
-            //     display: 'inline',
-            //     position: 'fixed',
-            //     top: top + 50,
-            //     left: windowWidth - 250,
-            //     'z-index': 1000
+            // $(this).css({
+            //     height: 20,
+            //     width: 20,
+            //     transition: '0.5s'
             // })
-
-            // $('.name').text($('h2').eq(index + 1).text());
-
-            // $(value).mouseout(function () {
-            //     $('.name').css({
-            //         display: 'none'
-            //     })
-            // });
-
         });
 
         $(value).click(function () {
+            if (index != 0) {
+                deleteDiv('.ball');
+            }
+            else {
+                generateDiv(getRandomInt(50, 70));
+                setInterval(animation, 100);
+            }
             $('.circle').removeClass('activePoint');
             $(this).addClass('activePoint');
             let top = $('.one-page').eq(index).offset().top;
-            $('html').animate({
-                scrollTop: top
-            }, 500)
+            $('html').animate({ scrollTop: top }, 0)
         });
-
         document.getElementById("circle-collection").style.top = (windowHeight / 2) - 150 + 'px';
     });
+
+    window.addEventListener("scroll", function () {
+        let top = $('#cont2').offset().top;
+        $('.circle').removeClass('activePoint');
+        $('.circle').eq(Math.trunc(top / windowHeight)).addClass('activePoint');
+        if (Math.trunc(top / windowHeight !== 0)) { deleteDiv('.ball') }
+        else {
+            generateDiv(getRandomInt(50, 70));
+            setInterval(animation, 100);
+        }
+    })
+
+    function getRandomInt(min, max) { return Math.floor(Math.random() * (max - min)) + min }
+    // let getRandomInt = (min, max) => { Math.floor(Math.random() * (max - min)) + min };
+
+    function createDiv(className) {
+        let div = document.createElement('div');
+        div.className = className;
+        div.style.backgroundColor = ballColors[getRandomInt(0, 4)];
+        div.style.zIndex = -100;
+        return div;
+    }
+
+    function deleteDiv(className) {
+        document.querySelectorAll(className).forEach(element => { element.remove() });
+    }
+
+    function generateDiv(n) {
+        for (let i = 0; i < n; i++) {
+            document.getElementById('info-about').appendChild(createDiv('ball'));
+        }
+    }
+
+    function animation() {
+        let windowH = $('.one-page').height();
+        let windowW = $('.one-page').width();
+
+        document.querySelectorAll('.ball').forEach(element => {
+            let hw = getRandomInt(1, 100);
+            $(element).animate({
+                left: getRandomInt(0, windowW),
+                top: getRandomInt(0, windowH),
+                height: hw,
+                width: hw
+            }, getRandomInt(1000, 10000), easing[getRandomInt(1, 29)]);
+
+        });
+    }
+
+    generateDiv(getRandomInt(50, 70));
+    setInterval(animation, 100);
+
+
+
+
+
 })

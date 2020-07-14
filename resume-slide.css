@@ -66,9 +66,16 @@ a:hover{
 
 .soft-info, .hard-info{
     width: 80%;
-    background-color: #fff9e9;
+    background-color: #fff9e962;
     display: flex;
     justify-content: space-around;
+    border-width: 30px;
+    border-style: groove;
+    border-image: linear-gradient(
+        to left,
+        #fff9e962,
+        #b2d9eab9 
+    )1 100%;
 }
 
 .soft-info{
@@ -86,6 +93,8 @@ a:hover{
     background-size: 100% 100%;
     margin-right: 5px;
 }
+
+
 
 .points>li{
     height: 30px;
