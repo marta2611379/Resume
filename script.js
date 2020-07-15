@@ -1,5 +1,6 @@
 $(document).ready(function () {
     const windowHeight = $(window).innerHeight();
+    const windowWidth = $(window).innerWidth();
     let top = $('.one-page').eq(0).offset().top;
     let easing = ['easeInSine', 'easeOutSine', 'easeInOutSine', 'easeInQuad',
         'easeOutQuad', 'easeInOutQuad', 'easeInCubic', 'easeOutCubic',
@@ -14,24 +15,28 @@ $(document).ready(function () {
     $('html').animate({ scrollTop: top }, 100)
     $('html').animate({ scrollTop: 0 }, 0)
     $('.circle').eq(0).addClass('activePoint');
+    $('.circle').mouseover(function () {
+        $(this).css({
+            backgroundImage: 'url("img/text_sprites.png")',
+            transition: '0.3s'
+        })
+
+    }).mouseout(function () {
+        $(this).css({
+            backgroundImage: 'url("img/nav_sprites.png")',
+            transition: '0.3s'
+        })
+    })
 
     $('.circle').each(function (index, value) {
-
-        $(value).mouseover(function () {
-            // $(this).css({
-            //     height: 20,
-            //     width: 20,
-            //     transition: '0.5s'
-            // })
-        });
-
         $(value).click(function () {
-            if (index != 0) {
+            if ((index == 0) || (index == 3)) {
                 deleteDiv('.ball');
+                generateDiv(getRandomInt(40, 50));
+                setInterval(animation, 100);
             }
             else {
-                generateDiv(getRandomInt(50, 70));
-                setInterval(animation, 100);
+                deleteDiv('.ball');
             }
             $('.circle').removeClass('activePoint');
             $(this).addClass('activePoint');
@@ -45,10 +50,13 @@ $(document).ready(function () {
         let top = $('#cont2').offset().top;
         $('.circle').removeClass('activePoint');
         $('.circle').eq(Math.trunc(top / windowHeight)).addClass('activePoint');
-        if (Math.trunc(top / windowHeight !== 0)) { deleteDiv('.ball') }
-        else {
+        if ((Math.trunc(top / windowHeight == 0)) || (Math.trunc(top / windowHeight == 3))) {
+            deleteDiv('.ball');
             generateDiv(getRandomInt(50, 70));
             setInterval(animation, 100);
+        }
+        else {
+            deleteDiv('.ball');
         }
     })
 
@@ -59,7 +67,7 @@ $(document).ready(function () {
         let div = document.createElement('div');
         div.className = className;
         div.style.backgroundColor = ballColors[getRandomInt(0, 4)];
-        div.style.zIndex = -100;
+        div.style.zIndex = -1;
         return div;
     }
 
@@ -91,6 +99,7 @@ $(document).ready(function () {
 
     generateDiv(getRandomInt(50, 70));
     setInterval(animation, 100);
+
 
 
 

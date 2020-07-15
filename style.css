@@ -3,6 +3,7 @@
 
 body{
     font-family:'Merriweather', serif;
+    /* overflow: hidden; */
 }
 
 .one-page{
@@ -11,29 +12,20 @@ body{
     display: flex;
     justify-content: space-around;
     align-items: center;
-    /* z-index: 100; */
 }
 
 .one-page:first-child{
-    /* background-image: url(img/working-place.jpg); */
     background-position: center;
     background-size: 100% 100%;
 }
 
-
-.one-page:nth-child(2){
-    flex-direction: column;
-    justify-content: space-around;
-}
-.one-page:nth-child(3){
+.one-page:nth-child(2),.one-page:nth-child(3),.one-page:nth-child(4){
     flex-direction: column;
     justify-content: space-around;
 }
 
-.color1{background-color: #fdfdfd98;}
-
-.color2{background-color: #e3ded8;}
-
+.color1{ background-color: #fdfdfdc9;}
+.color2{ background-color: #e3ded8;}
 .color3{ background-color: #b2d9ea;}
 
 #circle-collection{
@@ -48,11 +40,21 @@ body{
 .circle{
     width: 60px;
     height: 60px;
-    background-color: #d8d8d2;
+    background-color:#fff;
     border-radius: 50%;
+    background-image: url(img/nav_sprites.png);
+    background-size: 100%;
 }
 
-.activePoint {background-color: #fff;}
+.home{background-position: 0px -60px;}
+.about-me{background-position: 0px -300px;}
+.contacts{background-position: 0px -240px;}
+.works{background-position: 0px -120px;}
+
+.activePoint {
+    background-color: #fff;
+    border: 10px solid #fff; 
+}
 
 #info-about{
     height: 50%;
@@ -62,10 +64,12 @@ body{
     text-align: center;
     z-index: 10;
 }
+
 .main-text-h{
     font-size: 40px;
     font-weight: bolder;
 }
+
 hr{
     width: 80%;
     height: 1px;
@@ -78,18 +82,12 @@ hr{
     font-size: 30px;
 }
 
-.f-end{
-    font-size: 45px;
-}
+.f-end{font-size: 45px;}
 
 .darkmilk{ color: #f5eacd;}
 .milk{ color: #fff9e9;}
 .light-pink{ color: #f8dfd6;}
 .main-tcolor{ color: #3c9da8;}
-
-#name{
-    color: #f8c9b8;
-}
 
 #container{
     width: 100%;
@@ -109,6 +107,7 @@ hr{
     align-items: center;
     position: fixed;
     right: 0px;
+    z-index: 10;
 }
 
 .ball{
@@ -116,8 +115,6 @@ hr{
     height: 20px;
     border-radius: 50%;
     background-color: #619196;
-    /* background-color: rgba(192, 96, 32, 0.363); */
-    /* position: fixed; */
     position: fixed;
     top: -200px;
 }
