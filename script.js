@@ -1,6 +1,11 @@
 $(document).ready(function () {
     const windowHeight = $(window).innerHeight();
     const windowWidth = $(window).innerWidth();
+    let photoWigth = $('#own-photo').innerWidth();
+    console.log(photoWigth);
+    $('.photo-info').css('width',photoWigth)
+    // $('#n-sur').css('width',photoWigth)
+
     let top = $('.one-page').eq(0).offset().top;
     let easing = ['easeInSine', 'easeOutSine', 'easeInOutSine', 'easeInQuad',
         'easeOutQuad', 'easeInOutQuad', 'easeInCubic', 'easeOutCubic',

@@ -57,8 +57,8 @@ body{
 }
 
 #info-about{
-    height: 50%;
-    width: 70%;
+    height: 300px;
+    width: 700px;
     padding: 30px 10px;
     background-color:#619196;
     text-align: center;
@@ -88,6 +88,7 @@ hr{
 .milk{ color: #fff9e9;}
 .light-pink{ color: #f8dfd6;}
 .main-tcolor{ color: #3c9da8;}
+.tcolor{color: rgb(32, 104, 109);}
 
 #container{
     width: 100%;
