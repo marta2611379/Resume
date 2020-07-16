@@ -3,7 +3,7 @@
 
 body{
     font-family:'Merriweather', serif;
-    /* overflow: hidden; */
+    overflow: hidden;
 }
 
 .one-page{
@@ -19,7 +19,8 @@ body{
     background-size: 100% 100%;
 }
 
-.one-page:nth-child(2),.one-page:nth-child(3),.one-page:nth-child(4){
+.one-page:nth-child(2),
+.one-page:nth-child(4){
     flex-direction: column;
     justify-content: space-around;
 }

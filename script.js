@@ -1,12 +1,14 @@
 $(document).ready(function () {
-    const windowHeight = $(window).innerHeight();
-    const windowWidth = $(window).innerWidth();
+    let windowHeight = $(window).innerHeight();
+    let windowWidth = $(window).innerWidth();
+    let windowH = $('.one-page').innerHeight();
+    let windowW = $('.one-page').innerWidth();
     let photoWigth = $('#own-photo').innerWidth();
-    console.log(photoWigth);
-    $('.photo-info').css('width',photoWigth)
-    // $('#n-sur').css('width',photoWigth)
+    $('.photo-info').css('width', photoWigth);
 
     let top = $('.one-page').eq(0).offset().top;
+
+    let ballColors = ['#619196c4', '#619196;', '#619196a9', '#61919650', '#61919628'];
     let easing = ['easeInSine', 'easeOutSine', 'easeInOutSine', 'easeInQuad',
         'easeOutQuad', 'easeInOutQuad', 'easeInCubic', 'easeOutCubic',
         'easeInOutCubic', 'easeInQuart', 'easeOutQuart', 'easeInOutQuart',
@@ -15,7 +17,6 @@ $(document).ready(function () {
         'easeInOutCirc', 'easeInBack', 'easeOutBack', 'easeInOutBack',
         'easeInElastic', 'easeOutElastic', 'easeInOutElastic', 'easeInBounce',
         'easeOutBounce', 'easeInOutBounce'];
-    let ballColors = ['#619196c4', '#619196;', '#619196a9', '#61919650', '#61919628']
 
     $('html').animate({ scrollTop: top }, 100)
     $('html').animate({ scrollTop: 0 }, 0)
@@ -25,7 +26,6 @@ $(document).ready(function () {
             backgroundImage: 'url("img/text_sprites.png")',
             transition: '0.3s'
         })
-
     }).mouseout(function () {
         $(this).css({
             backgroundImage: 'url("img/nav_sprites.png")',
@@ -51,11 +51,19 @@ $(document).ready(function () {
         document.getElementById("circle-collection").style.top = (windowHeight / 2) - 150 + 'px';
     });
 
+    $(window).resize(function resz() {
+        windowHeight = $(window).innerHeight();
+        windowWidth = $(window).innerWidth();
+        windowH = $('.one-page').innerHeight();
+        windowW = $('.one-page').innerWidth();
+    })
+
+
     window.addEventListener("scroll", function () {
         let top = $('#cont2').offset().top;
         $('.circle').removeClass('activePoint');
         $('.circle').eq(Math.trunc(top / windowHeight)).addClass('activePoint');
-        if ((Math.trunc(top / windowHeight == 0)) || (Math.trunc(top / windowHeight == 3))) {
+        if (((top / windowHeight) == 0) || (Math.trunc(top / windowHeight) == 3)) {
             deleteDiv('.ball');
             generateDiv(getRandomInt(50, 70));
             setInterval(animation, 100);
@@ -66,7 +74,6 @@ $(document).ready(function () {
     })
 
     function getRandomInt(min, max) { return Math.floor(Math.random() * (max - min)) + min }
-    // let getRandomInt = (min, max) => { Math.floor(Math.random() * (max - min)) + min };
 
     function createDiv(className) {
         let div = document.createElement('div');
@@ -87,9 +94,6 @@ $(document).ready(function () {
     }
 
     function animation() {
-        let windowH = $('.one-page').height();
-        let windowW = $('.one-page').width();
-
         document.querySelectorAll('.ball').forEach(element => {
             let hw = getRandomInt(1, 100);
             $(element).animate({
@@ -98,7 +102,6 @@ $(document).ready(function () {
                 height: hw,
                 width: hw
             }, getRandomInt(1000, 10000), easing[getRandomInt(1, 29)]);
-
         });
     }
 
