@@ -332,3 +332,105 @@ a>img{
     .linkedin{ background-position: -52px -8px;}
     .phone{background-position:  -52px 40px;}
 }
+
+@media screen and (min-width: 320px) and (max-width: 480px){
+    #own-photo{height: 82%;}
+    .photo-info{width: 153.115px;}
+
+    #n-sur{
+        height: 18%;
+        width: 300px;
+    }
+
+    .resume{
+        height: 250px;
+        width: 300px;
+        display: flex;
+        justify-content: space-between;
+        background-color: #cdcdcd69;
+    }
+
+    .skills{
+        margin-top: 50px;
+        width:250px;
+    }
+
+    .education{
+        display: flex;
+        width: 100%;
+        padding: 6px 0;
+        box-sizing: border-box;
+    }
+
+    #edu-points{
+        margin-left: -27px;
+    }
+
+    #edu-points>li{margin: 5px;}
+
+    .h{
+        color: rgb(32, 104, 109);
+        font-size: 13px;
+        transform: rotate(-90deg);
+        height: 20px;
+        margin-top: 30px;
+        margin-left: -18px;
+        text-decoration: underline;
+    }
+
+
+    .h2{
+        font-size: 13px;}
+    .h3{ font-size: 10px;}
+    .m-m{ 
+        font-size: 20px;
+        margin-bottom: 5px;
+    }
+
+    .hard-info{
+        width: 100px;
+    }
+
+    .points1>li,.points2>li,.points3>li{
+        height: 30px;
+        width: 30px;
+        margin: 2px;
+    }
+
+    .points1>li:nth-child(1){background-position: 0 -420px;}
+    .points1>li:nth-child(2){background-position: 0 -90px;}
+    .points1>li:nth-child(3){background-position: 0 90px;}
+    .points2>li:nth-child(1){background-position: 0 60px;}
+    .points2>li:nth-child(3){background-position: 0 -330px;}
+    .points3>li:nth-child(1){background-position: 0 -300px;}
+    .points3>li:nth-child(2){background-position: 0 300px;}
+    .points3>li:nth-child(3){background-position: 0 -120px;}
+
+    .my-work{
+        height: 260px;
+        width: 180px;
+        transition: 1s;
+    }
+    .my-work:hover{
+        height: 300px;
+        width: 200px;
+        transition: 1s;
+        box-shadow: 3px 3px 7px 8px rgba(255, 255, 255, 0.728);
+    
+    }
+    
+    #icons{ width: 300px;}
+    
+    #icons>li{height: 35px;}
+    
+    .icon{
+        width: 30px;
+        height: 30px;
+        margin: 5px;
+    }
+
+    .email{background-position: -6px -8px;}
+    .skype{background-position: -9px 40px;}
+    .linkedin{ background-position: -52px -8px;}
+    .phone{background-position:  -52px 40px;}
+}

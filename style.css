@@ -5,7 +5,7 @@
 
 body{
     font-family:'Merriweather', serif;
-    overflow: hidden;
+    /* overflow: hidden; */
 }
 
 .one-page{
@@ -190,6 +190,71 @@ hr{
         padding-bottom: 35px;
     }
     .main-text-h{font-size: 26px;}
+    .main-tcolor{ font-size:8px;}
+
+    hr{
+        width: 97%;
+        height: 0.1px;
+    }
+
+}
+
+@media screen and (min-width: 320px) and (max-width: 480px){
+    #container{
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        flex-direction: column;
+      
+    }
+
+    #cont1{
+        width: 100%;
+        height: 85%;
+        /* margin-top: 15vh; */
+    }
+
+    .one-page{
+        /* height: 85vh; */
+    }
+
+    #cont2{
+        width: 100%;
+        height: 15vh;
+    }
+
+    #circle-collection{
+    width: 300px;
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    }
+
+    #circle-collection{
+        width: 450px;
+        height: 200px;
+    }
+
+    .circle{
+        width: 60px;
+        height: 60px;
+    }
+
+    .activePoint {
+        border: 6px solid #fff; 
+    }
+
+    #info-about{
+        height: 120px;
+        width: 350px;       
+    }
+
+    .main-text{
+        font-size: 15px;
+        padding-top:  10px;
+        padding-bottom: 35px;
+    }
+    .main-text-h{font-size: 20px;}
     .main-tcolor{ font-size:8px;}
 
     hr{

@@ -4,10 +4,9 @@ $(document).ready(function () {
     let windowH = $('.one-page').innerHeight();
     let windowW = $('.one-page').innerWidth();
     let photoWigth = $('#own-photo').innerWidth();
-    console.log(photoWigth);
-    // $('.photo-info').css('width', photoWigth);
+    $('.photo-info').css('width', photoWigth);
 
-    let top = $('.one-page').eq(1).offset().top;
+    let top = $('.one-page').eq(0).offset().top;
 
     let ballColors = ['#619196c4', '#619196;', '#619196a9', '#61919650', '#61919628'];
     let easing = ['easeInSine', 'easeOutSine', 'easeInOutSine', 'easeInQuad',
