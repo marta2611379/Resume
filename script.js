@@ -37,7 +37,7 @@ $(document).ready(function () {
         $(value).click(function () {
             if ((index == 0) || (index == 3)) {
                 deleteDiv('.ball');
-                generateDiv(getRandomInt(40, 50));
+                generateDiv(getRandomInt(10, 30));
                 setInterval(animation, 100);
             }
             else {
@@ -65,7 +65,7 @@ $(document).ready(function () {
         $('.circle').eq(Math.trunc(top / windowHeight)).addClass('activePoint');
         if (((top / windowHeight) == 0) || (Math.trunc(top / windowHeight) == 3)) {
             deleteDiv('.ball');
-            generateDiv(getRandomInt(50, 70));
+            generateDiv(getRandomInt(10, 30));
             setInterval(animation, 100);
         }
         else {
@@ -105,7 +105,7 @@ $(document).ready(function () {
         });
     }
 
-    generateDiv(getRandomInt(50, 70));
+    generateDiv(getRandomInt(10, 30));
     setInterval(animation, 100);
 
 
