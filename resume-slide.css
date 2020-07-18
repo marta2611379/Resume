@@ -334,64 +334,66 @@ a>img{
 }
 
 @media screen and (min-width: 320px) and (max-width: 480px){
-    #own-photo{height: 82%;}
-    .photo-info{width: 153.115px;}
+    #own-photo{height: 80%;}
+    /* .photo-info{width: 153.115px;} */
 
     #n-sur{
-        height: 18%;
-        width: 300px;
+        height: 20%;
+        width: 100%;
     }
 
     .resume{
-        height: 250px;
-        width: 300px;
-        display: flex;
+        height: 400px;
+        width: 200px;
+        display: inline;
         justify-content: space-between;
         background-color: #cdcdcd69;
     }
+    .photo-info{
+        height: 250px;
+        width:200px;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start ;
+        /* justify-content: center; */
+    }
 
     .skills{
-        margin-top: 50px;
-        width:250px;
+        /* margin-top: 50px; */
+        width:200px;
     }
 
     .education{
-        display: flex;
-        width: 100%;
-        padding: 6px 0;
+        width: 90%;
+        padding: 6px 10px;
         box-sizing: border-box;
-    }
-
-    #edu-points{
-        margin-left: -27px;
+        text-align: center;
     }
 
     #edu-points>li{margin: 5px;}
 
     .h{
-        color: rgb(32, 104, 109);
-        font-size: 13px;
-        transform: rotate(-90deg);
-        height: 20px;
-        margin-top: 30px;
-        margin-left: -18px;
-        text-decoration: underline;
+        font-size: 15px;
+        margin-top: 5px;
+       
     }
-
-
-    .h2{
-        font-size: 13px;}
+    .h2{font-size: 10px;}
     .h3{ font-size: 10px;}
+
     .m-m{ 
-        font-size: 20px;
+        font-size: 15px;
         margin-bottom: 5px;
     }
 
     .hard-info{
-        width: 100px;
+        display: inline;
+        width: 32px;
+        margin-top: -300px;
+        margin-right: 10px;
     }
 
     .points1>li,.points2>li,.points3>li{
+        flex-direction: row;
         height: 30px;
         width: 30px;
         margin: 2px;

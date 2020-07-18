@@ -4,7 +4,7 @@ $(document).ready(function () {
     let windowH = $('.one-page').innerHeight();
     let windowW = $('.one-page').innerWidth();
     let photoWigth = $('#own-photo').innerWidth();
-    $('.photo-info').css('width', photoWigth);
+    // $('.photo-info').css('width', photoWigth);
 
     let top = $('.one-page').eq(0).offset().top;
 
