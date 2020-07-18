@@ -1,5 +1,7 @@
 @import url(reset.css);
 @import url(resume-slide.css);
+@import url(screen.css);
+
 
 body{
     font-family:'Merriweather', serif;
@@ -27,7 +29,26 @@ body{
 
 .color1{ background-color: #fdfdfdc9;}
 .color2{ background-color: #e3ded8;}
-.color3{ background-color: #b2d9ea;}
+.color3{ background-color: #c0c0c0;}
+
+#container{
+    width: 100%;
+    display: flex;
+}
+
+#cont1{width: 90%;}
+
+#cont2{
+    width: 10%;
+    height: 100vh;
+    background-color: #619196;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: fixed;
+    right: 0px;
+    z-index: 10;
+}
 
 #circle-collection{
     width: 80px;
@@ -91,27 +112,6 @@ hr{
 .main-tcolor{ color: #3c9da8;}
 .tcolor{color: rgb(32, 104, 109);}
 
-#container{
-    width: 100%;
-    display: flex;
-}
-
-#cont1{
-    width: 90%;
-}
-
-#cont2{
-    width: 10%;
-    height: 100vh;
-    background-color: #619196;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    position: fixed;
-    right: 0px;
-    z-index: 10;
-}
-
 .ball{
     width: 20px;
     height: 20px;
@@ -119,4 +119,82 @@ hr{
     background-color: #619196;
     position: fixed;
     top: -200px;
+}
+
+
+
+@media screen and (min-width: 768px) and (max-width: 960px)  and (min-height: 500px){
+    #cont1{
+        width: 88%;
+    }
+    #cont2{
+        width: 12%;
+    }
+    .circle{
+        width: 50px;
+        height: 50px;
+        background-image: url(img/nav_sprites.png);
+        background-size: 115%;
+    }
+    
+    .home{background-position: -5px -60px;}
+    .about-me{background-position: -3px -290px;}
+    .contacts{background-position: -5px -235px;}
+    .works{background-position: -5px -120px;}
+
+    #info-about{
+        height: 230px;
+        width: 550px;       
+    }
+
+    .main-text-h{font-size: 35px;}
+    .main-tcolor{ font-size: 12px;}
+}
+
+@media screen and (min-width: 480px) and (max-width: 768px){
+    #cont1{
+        width: 86%;
+    }
+    #cont2{
+        width: 14%;
+    }
+
+    #circle-collection{
+        width: 450px;
+        height: 200px;
+    }
+
+    .circle{
+        width: 40px;
+        height: 40px;
+        background-image: url(img/nav_sprites.png);
+        background-size: 120%;
+    }
+
+    .activePoint {
+        border: 4px solid #fff; 
+    }
+    
+    .home{background-position: -4px -54px;}
+    .about-me{background-position: -4px -245px;}
+    .contacts{background-position: -4px -196px;}
+    .works{background-position: -4px -100px;}
+
+    #info-about{
+        height: 150px;
+        width: 350px;       
+    }
+    .main-text{
+        font-size: 20px;
+        padding-top:  10px;
+        padding-bottom: 35px;
+    }
+    .main-text-h{font-size: 26px;}
+    .main-tcolor{ font-size:8px;}
+
+    hr{
+        width: 97%;
+        height: 0.1px;
+    }
+
 }
