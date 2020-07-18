@@ -218,6 +218,12 @@ hr{
         height: 15vh;
     }
 
+    .one-page:nth-child(3){
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
     #circle-collection{
     width: 300px;
     height: 80px;
