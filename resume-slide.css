@@ -347,7 +347,7 @@ a>img{
         width: 200px;
         display: inline;
         justify-content: space-between;
-        background-color: #cdcdcd69;
+        background-color: #cdcdcd;;
     }
     .photo-info{
         height: 250px;
@@ -409,9 +409,9 @@ a>img{
     .points3>li:nth-child(3){background-position: 0 -120px;}
 
     .my-work{
-        height: 200px;
-        width: 150px;
-       margin: 20px;
+        height: 190px;
+        width: 140px;
+       /* margin: 10px; */
     }
     .my-work:hover{
         height: 200px;
